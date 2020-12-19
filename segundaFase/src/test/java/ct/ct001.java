@@ -12,9 +12,7 @@ public class ct001 {
 
 	@Before
 	public void setUp() throws Exception {
-
 		driver.setUp();
-
 	}
 
 	@After
