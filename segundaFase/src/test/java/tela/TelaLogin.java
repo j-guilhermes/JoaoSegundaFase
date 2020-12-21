@@ -4,15 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import abrirSite.OpenSite;
+import abrirSite.OpenLink;
 
-public class TelaLogin extends OpenSite {
+public class TelaLogin {
 
-	public static WebDriver driver ;
+	public static WebDriver driver = null;
 
 	public TelaLogin() throws Exception {
 
-		driver = OpenSite.getDriver();
+		driver = OpenLink.getDriver();
 
 	}
 

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import abrirSite.OpenSite;
+import abrirSite.OpenLink;
 import func.Login;
 
 public class ct001 {
@@ -13,8 +13,8 @@ public class ct001 {
 
 	@Before
 	public void setUp() throws Exception {
-		OpenSite site = new OpenSite();
-		site.abrirAplicacao();
+		OpenLink site = new OpenLink();
+		site.iniciarDriver();
 	}
 
 	@After
