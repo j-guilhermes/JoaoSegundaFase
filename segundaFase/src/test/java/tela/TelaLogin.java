@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import abrirSite.OpenLink;
+import abrirSite.OpenSite;
 
 public class TelaLogin {
 
@@ -12,7 +12,7 @@ public class TelaLogin {
 
 	public TelaLogin() throws Exception {
 
-		driver = OpenLink.getDriver();
+		driver = OpenSite.getDriver();
 
 	}
 

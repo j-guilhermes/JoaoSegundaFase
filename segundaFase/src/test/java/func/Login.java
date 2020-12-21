@@ -10,7 +10,7 @@ public class Login {
 
 	public void digitaLogin() throws Exception {
 		TelaLogin login = new TelaLogin();
-		login.digitarEmail("joazinho@ymail.com");
+		login.digitarEmail("camiilasouza@ymail.com");
 		login.digitarPassword("123456");
 		login.clicarSingIn();
 	}
