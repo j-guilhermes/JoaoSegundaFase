@@ -4,24 +4,27 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import abrirSite.chromeDriver;
+import abrirSite.OpenSite;
+import func.Login;
 
 public class ct001 {
 
-	chromeDriver driver = new chromeDriver();
+	Login login = new Login();
 
 	@Before
 	public void setUp() throws Exception {
-		driver.setUp();
+		OpenSite site = new OpenSite();
+		site.abrirAplicacao();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		driver.tearDown();
 	}
 
 	@Test
 	public void test() throws Exception {
+
+		login.digitaLogin();
 
 	}
 
