@@ -1,148 +1,158 @@
 package tela;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import abrirSite.OpenSite;
+import abrirSite.AbrirSite;
 
 public class TelaLogin {
 
 	public static WebDriver driver = null;
+	static String login;
 
 	public TelaLogin() throws Exception {
 
-		driver = OpenSite.getDriver();
+		driver = AbrirSite.getDriver();
 
 	}
 
-	public void digitarEmail(String emails) throws Exception {
+	public void digitarEmail(String email) throws Exception {
 
-		WebElement email = driver.findElement(By.id("email"));
-		email.sendKeys(emails);
+		WebElement emails = driver.findElement(By.id("email"));
+		emails.sendKeys(email);
 	}
 
 	public void clicarSingIn() {
-		driver.findElement(By.id("SubmitLogin")).click();
+		WebElement singIn = driver.findElement(By.id("SubmitLogin"));
+		singIn.click();
 	}
 
-	public void digitarNewEmail(String newEmail) {
+	public void digitarNovoEmail(String newEmail) {
 
-		WebElement email = driver.findElement(By.id("email_create"));
+		WebElement email = driver.findElement(By.xpath("//input[@id='email_create']"));
 		email.sendKeys(newEmail);
 
 	}
 
-	public void clicarCreateAccount() {
+	public void clicarCriarConta() {
 
 		driver.findElement(By.id("SubmitCreate")).click();
 	}
 
-	public void selecionarMr() {
+	public void selecionarTitulo(String title) {
 
-		WebElement mr = driver.findElement(By.id("id_gender1"));
-		mr.click();
+		WebElement titulo = driver.findElement(By.xpath("//*[text()[contains(., '" + title + "')]]"));
+		titulo.click();
 	}
 
-	public void selecionarMrs() {
-
-		WebElement mra = driver.findElement(By.id("id_gender2"));
-		mra.click();
-
-	}
-
-	public void digitarFirstName(String firstName) {
+	public void digitarNome(String firstName) {
 
 		WebElement firstname = driver.findElement(By.id("customer_firstname"));
 		firstname.sendKeys(firstName);
 
 	}
 
-	public void digitarLastName(String lasttname) {
+	public void digitarSobrenome(String sobrenome) {
 
-		WebElement lasttName = driver.findElement(By.id("customer_lasttname"));
-		lasttName.sendKeys(lasttname);
+		WebElement sobreNome = driver.findElement(By.id("customer_lastname"));
+		sobreNome.sendKeys(sobrenome);
 	}
 
-	public void digitarPassword(String password) {
+	public void digitarSenha(String senha) {
 
-		driver.findElement(By.id("passwd")).sendKeys("password");
-	}
-
-	public void selecionarDay(String day) {
-
-		WebElement days = driver.findElement(By.id("days"));
-		days.sendKeys(day);
+		WebElement passwd = driver.findElement(By.id("passwd"));
+		passwd.sendKeys(senha);
 
 	}
 
-	public void selecionarMonth(String months) {
+	public void selecionarDia(String dia) {
 
-		WebElement month = driver.findElement(By.id("month"));
-		month.sendKeys("months");
+		WebElement day = driver.findElement(By.id("days"));
+		day.sendKeys(dia);
+
 	}
 
-	public void selecionarYears(String year) {
+	public void selecionarMes(String mes) {
 
-		WebElement years = driver.findElement(By.id("years"));
-		years.sendKeys(year);
+		WebElement month = driver.findElement(By.id("months"));
+		month.sendKeys(mes);
 	}
 
-	public void digitarAddress(String address) {
+	public void selecionarAno(String ano) {
 
-		WebElement address1 = driver.findElement(By.id("address1"));
-		address1.sendKeys("address");
+		WebElement year = driver.findElement(By.id("years"));
+		year.sendKeys(ano);
 	}
 
-	public void digitarCity(String cities) {
+	public void digitarEndereco(String endereco) {
+
+		WebElement address = driver.findElement(By.id("address1"));
+		address.sendKeys(endereco);
+	}
+
+	public void digitarCidade(String cidade) {
 
 		WebElement city = driver.findElement(By.id("city"));
-		city.sendKeys("cities");
+		city.sendKeys(cidade);
 
 	}
 
-	public void selecionarState(String states) {
+	public void selecionarEstado(String estado) {
 
 		WebElement state = driver.findElement(By.id("id_state"));
-		state.sendKeys("states");
+		state.sendKeys(estado);
 
 	}
 
-	public void digitarPostalCode(String code) {
+	public void digitarCEP(String cep) {
 
 		WebElement postCode = driver.findElement(By.id("postcode"));
-		postCode.sendKeys("code");
+		postCode.sendKeys(cep);
 	}
 
-	public void selecionarCountry(String countries) {
+	public void selecionarPais(String pais) {
 
 		WebElement country = driver.findElement(By.id("id_country"));
-		country.sendKeys("countries");
+		country.sendKeys(pais);
 	}
 
-	public void digitarHomePhone(String homePhone) {
+	public void digitarTelefone(String telefone) {
 
 		WebElement phone = driver.findElement(By.id("phone"));
-		phone.sendKeys("homePhone");
+		phone.sendKeys(telefone);
 	}
 
-	public void digitarMobilePhone(String phoneMobile) {
+	public void digitarCelular(String celular) {
 
 		WebElement cellphone = driver.findElement(By.id("phone_mobile"));
-		cellphone.sendKeys("phoneMobile");
+		cellphone.sendKeys(celular);
 	}
 
-	public void digitarAddress2(String address2) {
+	public void digitarReferencia(String referencia) {
 
-		WebElement addresse2 = driver.findElement(By.id("alias"));
-		addresse2.sendKeys("address2");
+		WebElement reference = driver.findElement(By.id("alias"));
+		reference.clear();
+		reference.sendKeys(referencia);
 	}
 
-	public void clicarRegister() {
+	public void clicarRegistrar() {
 
-		WebElement register = driver.findElement(By.id("submitAccount"));
-		register.click();
+		WebElement registrar = driver.findElement(By.id("submitAccount"));
+		registrar.click();
 
 	}
 
+	public void validarLogin() throws Exception {
+		try {
+			WebElement validaLogin = driver.findElement(By.xpath("//h1[text()[contains(., 'My account')]]"));
+			login = validaLogin.getText().toLowerCase();
+			assertEquals("my account", login);
+			System.out.println("Login validado com sucesso !");
+		} catch (AssertionError e) {
+			e.printStackTrace();
+		}
+	}
 }

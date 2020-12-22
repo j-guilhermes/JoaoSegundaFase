@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class OpenSite {
+public class AbrirSite {
 
 	public static WebDriver driver = null;
 
@@ -23,7 +23,7 @@ public class OpenSite {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+		driver.get("http://automationpractice.com/index.php");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
 
