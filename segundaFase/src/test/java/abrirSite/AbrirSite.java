@@ -31,6 +31,7 @@ public class AbrirSite {
 
 	@After
 	public void fecharAplicacao() throws Exception {
+
 		driver.quit();
 	}
 

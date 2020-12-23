@@ -13,6 +13,7 @@ public class Pagamento {
 		pagamento.selecionarTransferenciaBancaria();
 		pagamento.clicarConfirmarPedido();
 		pagamento.validarMensagemFinal();
+		
 	}
 
 }

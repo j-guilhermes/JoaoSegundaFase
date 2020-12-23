@@ -49,7 +49,7 @@ public class Endereco {
 		Thread.sleep(1000);
 		endereco.digitarCelular("988776655");
 		Thread.sleep(1000);
-		endereco.digitarReferencia("cas3a");
+		endereco.digitarReferencia("cas4a");
 		Thread.sleep(1000);
 		endereco.guardarEndereco();
 		Thread.sleep(1000);
