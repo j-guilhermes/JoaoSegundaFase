@@ -87,57 +87,6 @@ public class TelaLogin {
 		year.sendKeys(ano);
 	}
 
-	public void digitarEndereco(String endereco) {
-
-		WebElement address = driver.findElement(By.id("address1"));
-		address.sendKeys(endereco);
-	}
-
-	public void digitarCidade(String cidade) {
-
-		WebElement city = driver.findElement(By.id("city"));
-		city.sendKeys(cidade);
-
-	}
-
-	public void selecionarEstado(String estado) {
-
-		WebElement state = driver.findElement(By.id("id_state"));
-		state.sendKeys(estado);
-
-	}
-
-	public void digitarCEP(String cep) {
-
-		WebElement postCode = driver.findElement(By.id("postcode"));
-		postCode.sendKeys(cep);
-	}
-
-	public void selecionarPais(String pais) {
-
-		WebElement country = driver.findElement(By.id("id_country"));
-		country.sendKeys(pais);
-	}
-
-	public void digitarTelefone(String telefone) {
-
-		WebElement phone = driver.findElement(By.id("phone"));
-		phone.sendKeys(telefone);
-	}
-
-	public void digitarCelular(String celular) {
-
-		WebElement cellphone = driver.findElement(By.id("phone_mobile"));
-		cellphone.sendKeys(celular);
-	}
-
-	public void digitarReferencia(String referencia) {
-
-		WebElement reference = driver.findElement(By.id("alias"));
-		reference.clear();
-		reference.sendKeys(referencia);
-	}
-
 	public void clicarRegistrar() {
 
 		WebElement registrar = driver.findElement(By.id("submitAccount"));

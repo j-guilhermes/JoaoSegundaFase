@@ -6,11 +6,13 @@ import org.junit.Test;
 
 import abrirSite.AbrirSite;
 import func.Home;
+import func.Login;
 import func.Produtos;
 import func.Resumo;
 
-public class CT005 {
+public class CT008 {
 
+	Login login = new Login();
 	Home home = new Home();
 	Produtos produto = new Produtos();
 	Resumo resumo = new Resumo();
@@ -20,7 +22,7 @@ public class CT005 {
 		AbrirSite site = new AbrirSite();
 		site.iniciarDriver();
 
-		System.out.println("CT005 - Validar inclusão de produto carrinho deslogado");
+		System.out.println("CT00 - Validar exclusão de produto carrinho logado");
 
 	}
 
@@ -33,6 +35,12 @@ public class CT005 {
 	@Test
 	public void test() throws Exception {
 
+		System.out.println("Clicar em Sign in na tela home");
+		home.clicaSignIn();
+
+		System.out.println("Realizar Login");
+		login.digitaLogin();
+
 		System.out.println("Selecionar produto na tela home");
 		home.clicaAbaMulher();
 
@@ -41,6 +49,9 @@ public class CT005 {
 
 		System.out.println("Validar quantidade do carrinho");
 		resumo.validaQuantidade();
+
+		System.out.println("Excluir produto do carrinho");
+		resumo.excluiProdutoCarrinho();
 
 	}
 

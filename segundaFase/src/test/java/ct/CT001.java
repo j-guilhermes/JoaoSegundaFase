@@ -38,7 +38,7 @@ public class CT001 {
 		home.clicaCarrinho();
 
 		System.out.println("Validar Mensagem de carrinho vazio");
-		resumo.validaCardVazio();
+		resumo.validaCarrinhoVazio();
 	}
 
 }

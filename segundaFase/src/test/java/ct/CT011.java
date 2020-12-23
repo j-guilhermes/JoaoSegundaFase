@@ -5,25 +5,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 import abrirSite.AbrirSite;
+import func.Endereco;
+import func.Frete;
 import func.Home;
 import func.Login;
+import func.Pagamento;
 import func.Produtos;
 import func.Resumo;
 
-public class CT007 {
+public class CT011 {
 
 	Login login = new Login();
 	Home home = new Home();
 	Produtos produto = new Produtos();
 	Resumo resumo = new Resumo();
+	Endereco endereco = new Endereco();
+	Frete frete = new Frete();
+	Pagamento pagamento = new Pagamento();
 
 	@Before
 	public void setUp() throws Exception {
 		AbrirSite site = new AbrirSite();
 		site.iniciarDriver();
 
-		System.out.println("CT007 - Validar exclusão de produto carrinho deslogado");
-
+		System.out.println("CT010 - Validar criar novo endereço de entrega");
 	}
 
 	@After
@@ -35,6 +40,12 @@ public class CT007 {
 	@Test
 	public void test() throws Exception {
 
+		System.out.println("Clicar em Sign in na tela home");
+		home.clicaSignIn();
+
+		System.out.println("Realizar Login");
+		login.digitaLogin();
+
 		System.out.println("Selecionar produto na tela home");
 		home.clicaAbaMulher();
 
@@ -44,8 +55,17 @@ public class CT007 {
 		System.out.println("Validar quantidade do carrinho");
 		resumo.validaQuantidade();
 
-		System.out.println("Excluir produto do carrinho");
-		resumo.excluiProdutoCarrinho();
+		System.out.println("Clicar no botão check out na tela Resumo");
+		resumo.clicaBotaoCheckOutResumo();
+
+		System.out.println("Clicar no botão check out na tela Endereço");
+		endereco.clicaCheckoutEndereco();
+
+		System.out.println("Aceitar termo de serviços e clicar em check out");
+		frete.selecionarFreteTermo();
+
+		System.out.println("Selecionar forma de pagamento e confirmar pedido");
+		pagamento.confirmaPedido();
 
 	}
 

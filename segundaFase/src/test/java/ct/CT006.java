@@ -48,7 +48,7 @@ public class CT006 {
 		produto.selecionaInformacoesDoProduto();
 
 		System.out.println("Validar quantidade do carrinho");
-		resumo.validarQuantidade();
+		resumo.validaQuantidade();
 
 	}
 

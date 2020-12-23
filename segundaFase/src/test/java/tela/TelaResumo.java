@@ -14,6 +14,7 @@ public class TelaResumo {
 
 	public static String mensagemCarrinhoVazio;
 	public static String quantidadeObtidaCarrinho;
+	public static String enderecoAtual;
 
 	public TelaResumo() {
 
@@ -31,6 +32,8 @@ public class TelaResumo {
 	}
 
 	public void excluirItemCarrinho() {
+		WebElement excluir = driver.findElement(By.xpath("//i[@class='icon-trash']"));
+		excluir.click();
 
 	}
 
@@ -39,6 +42,9 @@ public class TelaResumo {
 	}
 
 	public void clicarBotaoCheckOut() {
+
+		WebElement checkout = driver.findElement(By.xpath("//*[@id='center_column']/p[2]/a[1]"));
+		checkout.click();
 
 	}
 
@@ -52,5 +58,10 @@ public class TelaResumo {
 		} catch (AssertionError e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void guardarEnderecoAtual() {
+		WebElement endereco = driver.findElement(By.xpath("//span[@class='address_address1']"));
+		enderecoAtual = endereco.getText();
 	}
 }

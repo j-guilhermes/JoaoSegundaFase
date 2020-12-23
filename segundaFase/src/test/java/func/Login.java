@@ -1,5 +1,6 @@
 package func;
 
+import tela.TelaEndereco;
 import tela.TelaLogin;
 
 public class Login {
@@ -50,19 +51,22 @@ public class Login {
 
 	public void digitaInformacoesEndereco() throws Exception {
 		TelaLogin login = new TelaLogin();
-		login.digitarEndereco("travessa colorado do oeste");
+		TelaEndereco endereco = new TelaEndereco();
+		endereco.digitarEndereco("travessa colorado do oeste");
 		Thread.sleep(1000);
-		login.digitarCidade("United States");
+		endereco.digitarNumero("110");
 		Thread.sleep(1000);
-		login.selecionarEstado("alaska");
+		endereco.digitarCidade("United States");
 		Thread.sleep(1000);
-		login.digitarCEP("00000");
+		endereco.selecionarEstado("alaska");
 		Thread.sleep(1000);
-		login.digitarTelefone("41170226");
+		endereco.digitarCEP("00000");
 		Thread.sleep(1000);
-		login.digitarCelular("988776655");
+		endereco.digitarTelefone("41170226");
 		Thread.sleep(1000);
-		login.digitarReferencia("My home");
+		endereco.digitarCelular("988776655");
+		Thread.sleep(1000);
+		endereco.digitarReferencia("My home");
 		Thread.sleep(1000);
 		login.clicarRegistrar();
 		Thread.sleep(1000);
